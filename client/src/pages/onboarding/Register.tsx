@@ -5,18 +5,19 @@ import { Button } from "../../../components/ui/button";
 import { IconArrowNarrowRight } from "@tabler/icons-react";
 
 type Inputs = {
+  username: string;
   email: string;
   password: string;
 };
 
-const Login = () => {
+const Register = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<Inputs>();
 
-  const loginUser = () => {};
+  const registerUser = () => {};
 
   return (
     <div className="">
@@ -28,12 +29,30 @@ const Login = () => {
             width={200}
             className="mb-5"
           />
-          <p className="text-slate-500 mb-3">Welcome Back!!!</p>
-          <h3 className="text-5xl font-semibold mb-10">Sign In</h3>
+          <h3 className="text-5xl font-semibold mb-2">Sign Up</h3>
+          <p className="mb-10 text-slate-500">
+            Get free shipping, discount vouchers and members only products when
+            you’re in velvet club.
+          </p>
           <form
-            onSubmit={handleSubmit(loginUser)}
+            onSubmit={handleSubmit(registerUser)}
             className="space-y-5 text-center"
           >
+            <div>
+              <Input
+                type="username"
+                placeholder="Username"
+                {...register("username", {
+                  required: "Username is required",
+                })}
+                required
+              />
+              {errors.username && (
+                <p role="alert" className="form-error">
+                  {errors.username.message}
+                </p>
+              )}
+            </div>
             <div>
               <Input
                 type="email"
@@ -71,17 +90,14 @@ const Login = () => {
                   {errors.password.message}
                 </p>
               )}
-              <p className="text-sm text-slate-500 lg:hover:text-blue-500 text-end mt-1 cursor-pointer">
-                Forgot Password ?
-              </p>
             </div>
-            <Button variant="orange" className="rounded-full font-semibold">
-              SIGN IN <IconArrowNarrowRight stroke={1.25} className="ml-2" />
+            <Button variant="orange" className="rounded-full">
+              SIGN UP <IconArrowNarrowRight stroke={1.25} className="ml-2" />
             </Button>
             <p className="text-slate-400 text-sm">
-              I don't have an account ?{" "}
-              <Link to="/register" className="text-[#F47458] font-medium">
-                Sign up
+              Already have an account ?{" "}
+              <Link to="/login" className="text-[#F47458] font-medium">
+                Sign In
               </Link>
             </p>
           </form>
@@ -95,4 +111,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
