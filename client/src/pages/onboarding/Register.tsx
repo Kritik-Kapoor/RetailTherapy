@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -12,6 +13,8 @@ type Inputs = {
 };
 
 const Register = () => {
+  const [registrationError, setRegistrationError] = useState("");
+
   const {
     register,
     handleSubmit,
@@ -21,8 +24,15 @@ const Register = () => {
   const registerUser = async (data: Inputs) => {
     await axios
       .post(`${import.meta.env.VITE_APP_BASE_URL}/user/register`, data)
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
+      .then((res) => {
+        console.log(res);
+        setRegistrationError("");
+      })
+      .catch((err) => {
+        if (err.status === 401 || err.status === 404) {
+          setRegistrationError("Invalid credentials");
+        } else setRegistrationError("Sorry, something went wrong");
+      });
   };
 
   return (
@@ -40,6 +50,9 @@ const Register = () => {
             Get free shipping, discount vouchers and members only products when
             you’re in velvet club.
           </p>
+          {registrationError && (
+            <span className="text-red-500 mb-1">{registrationError}</span>
+          )}
           <form
             onSubmit={handleSubmit(registerUser)}
             className="space-y-5 text-center"

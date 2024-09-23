@@ -1,9 +1,12 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { Input } from "../../../components/ui/input";
 import { Button } from "../../../components/ui/button";
 import { IconArrowNarrowRight } from "@tabler/icons-react";
+import { useAppDispatch } from "../../redux/hooks";
+import { setUser } from "../../redux/slices/userSlice";
 
 type Inputs = {
   email: string;
@@ -11,6 +14,10 @@ type Inputs = {
 };
 
 const Login = () => {
+  const dispatch = useAppDispatch();
+
+  const [loginError, setLoginError] = useState("");
+
   const {
     register,
     handleSubmit,
@@ -21,10 +28,21 @@ const Login = () => {
     await axios
       .post(`${import.meta.env.VITE_APP_BASE_URL}/user/login`, data)
       .then((response) => {
+        setLoginError("");
         console.log(response);
+        const res = response.data.data;
+        dispatch(
+          setUser({
+            token: res.accessToken,
+            name: res.userData.username,
+          })
+        );
       })
       .catch((err) => {
         console.log(err);
+        if (err.status === 401 || err.status === 404) {
+          setLoginError("Invalid credentials");
+        } else setLoginError("Sorry, something went wrong");
       });
   };
 
@@ -40,6 +58,9 @@ const Login = () => {
           />
           <p className="text-slate-500 mb-3">Welcome Back!!!</p>
           <h3 className="text-5xl font-semibold mb-10">Sign In</h3>
+          {loginError && (
+            <span className="text-red-500 mb-1">{loginError}</span>
+          )}
           <form
             onSubmit={handleSubmit(loginUser)}
             className="space-y-5 text-center"
