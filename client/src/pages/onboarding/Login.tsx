@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import { Input } from "../../../components/ui/input";
 import { Button } from "../../../components/ui/button";
 import { IconArrowNarrowRight } from "@tabler/icons-react";
@@ -16,7 +17,16 @@ const Login = () => {
     formState: { errors },
   } = useForm<Inputs>();
 
-  const loginUser = () => {};
+  const loginUser = async (data: Inputs) => {
+    await axios
+      .post(`${import.meta.env.VITE_APP_BASE_URL}/user/login`, data)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <div className="">

@@ -2,7 +2,7 @@ import mongoose, { Schema } from "mongoose";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
-const onBoardingSchema = new Schema(
+const userSchema = new Schema(
   {
     username: {
       type: String,
@@ -27,16 +27,20 @@ const onBoardingSchema = new Schema(
   { timestamps: true }
 );
 
-onBoardingSchema.pre("save", async function (next) {
+userSchema.pre("save", async function (next) {
   if (!this.isModified("password")) return next();
   this.password = await bcrypt.hash(this.password, 10);
   next();
 });
 
-onBoarding.methods.generateAccessToken = function () {
+userSchema.methods.generateAccessToken = function () {
   return jwt.sign({ id: this._id }, process.env.ACCESS_TOKEN_SECRET, {
     expiresIn: process.env.ACCESS_TOKEN_EXPIRY,
   });
 };
 
-export const onBoarding = mongoose.model("onBoarding", onBoardingSchema);
+userSchema.methods.verifyPassword = async function (password) {
+  return await bcrypt.compare(password, this.password);
+};
+
+export const User = mongoose.model("User", userSchema);

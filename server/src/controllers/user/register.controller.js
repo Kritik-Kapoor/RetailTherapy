@@ -1,7 +1,7 @@
 import { ApiError } from "../../utils/ApiError.js";
 import { ApiResponse } from "../../utils/ApiResponse.js";
 import { asyncHandler } from "../../utils/asyncHandler.js";
-import { onBoarding } from "../../models/onboarding/onboarding.model.js";
+import { User } from "../../models/user/user.model.js";
 
 const registerUser = asyncHandler(async (req, res) => {
   const { username, email, password } = req.body;
@@ -11,21 +11,19 @@ const registerUser = asyncHandler(async (req, res) => {
   )
     throw new ApiError(400, "All fields are mandatory");
 
-  const userExists = await onBoarding.findOne({ email });
+  const userExists = await User.findOne({ email });
 
   if (userExists) throw new ApiError(409, "Email is already registered");
 
-  const createUser = await onBoarding.create({
+  const createUser = await User.create({
     username,
     email,
     password,
   });
 
-  const createdUser = await onBoarding
-    .findById(createUser._id)
-    .select("-password");
+  const createdUser = await User.findById(createUser._id).select("-password");
 
-  const { accessToken } = await createdUser.generateAccessToken();
+  const accessToken = createdUser.generateAccessToken();
   if (!accessToken) throw new ApiError(500, "Failed to generate access token");
 
   if (createdUser) {
@@ -41,4 +39,4 @@ const registerUser = asyncHandler(async (req, res) => {
   }
 });
 
-export { registerUser };
+export default registerUser;

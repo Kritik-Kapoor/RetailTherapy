@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import { Input } from "../../../components/ui/input";
 import { Button } from "../../../components/ui/button";
 import { IconArrowNarrowRight } from "@tabler/icons-react";
@@ -17,7 +18,12 @@ const Register = () => {
     formState: { errors },
   } = useForm<Inputs>();
 
-  const registerUser = () => {};
+  const registerUser = async (data: Inputs) => {
+    await axios
+      .post(`${import.meta.env.VITE_APP_BASE_URL}/user/register`, data)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  };
 
   return (
     <div className="">
