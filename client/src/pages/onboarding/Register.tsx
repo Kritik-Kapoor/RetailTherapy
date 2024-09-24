@@ -36,7 +36,7 @@ const Register = () => {
   };
 
   return (
-    <div className="">
+    <>
       <div className="h-screen flex items-center justify-center">
         <div className="z-10 shadow-md p-5 md:p-10 rounded-lg w-10/12 md:w-7/12 lg:w-5/12 xl:w-4/12 2xl:w-3/12">
           <img
@@ -126,7 +126,7 @@ const Register = () => {
         src="/assets/login-img.png"
         className="hidden lg:block absolute bottom-1 lg:right-[3%] xl:right-[18%] 2xl:right-[23%] lg:w-[300px] xl:w-[400px] 2xl:w-[500px]"
       />
-    </div>
+    </>
   );
 };
 
