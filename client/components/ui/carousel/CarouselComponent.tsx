@@ -10,57 +10,48 @@ import Autoplay from "embla-carousel-autoplay";
 const CarouselComponent: React.FC = () => {
   const plugin = useRef(Autoplay({ delay: 4000, stopOnInteraction: true }));
 
+  // const bgUrls = [
+  //   "/assets/male-model.png",
+  //   "/assets/female-model.png",
+  //   "/assets/male-model-2.png",
+  // ];
+
   return (
     <Carousel plugins={[plugin.current]} className="mx-auto">
-      <CarouselContent>
-        <CarouselItem className="pt-10 bg-[#F4F1EC]">
-          <div className="grid grid-cols-4 items-center">
-            <img
-              src="/assets/male-model-2.png"
-              alt="male model"
-              width={200}
-              className="mt-auto"
-            />
-            <div className="col-span-3 flex items-center pb-16">
-              <div>
-                <h1 className="text-7xl font-semibold mb-5">MEN</h1>
-                <h3 className="text-4xl font-semibold mb-5">
-                  UPGRADE YOUR STYLE WITH OUR LATEST COLLECTION
-                </h3>
-                <Button variant="orange">SHOP NOW</Button>
-              </div>
-              <img
-                src="/assets/male-model.png"
-                alt="male model"
-                width={700}
-                className="h-[500px] mr-20"
-              />
+      <CarouselContent className="relative">
+        <CarouselItem className="bg-[url('/assets/new-arrivals.png')] bg-cover bg-top h-[70vh]">
+          <div className="z-10 text-white flex flex-col items-center justify-center bg-black bg-opacity-50 pb-10 h-full">
+            <div className="pt-10 space-y-5 text-center">
+              <h2 className="text-5xl">New Arrivals</h2>
+              <h6 className="text-5xl font-thin">Winter Wear</h6>
             </div>
+            <Button variant="secondary" size="lg" className="py-3 mt-14">
+              SHOP NOW
+            </Button>
           </div>
         </CarouselItem>
-        <CarouselItem className="bg-[#D6D1CD] pt-10">
-          <div className="grid grid-cols-4 items-center">
-            <div className="col-span-3 flex items-center pb-16">
-              <img
-                src="/assets/female-model-2.png"
-                alt="female model"
-                width={400}
-                className="mt-auto"
-              />
-              <div>
-                <h1 className="text-7xl font-semibold mb-5">WOMEN</h1>
-                <h3 className="text-4xl font-semibold mb-5">
-                  STAY TRENDY WITH OUR LATEST FASHION
-                </h3>
-                <Button variant="orange">SHOP NOW</Button>
-              </div>
+        <CarouselItem className="bg-[url('/assets/female-model.png')] bg-cover bg-center h-[70vh]">
+          <div className="z-10 text-white flex flex-col items-center justify-center bg-black bg-opacity-50 pb-10 h-full w-full">
+            <div className="pt-10 space-y-5 text-center">
+              <h2 className="text-5xl">Women</h2>
+              <h6 className="text-5xl font-thin">
+                Explore Your True Creative Fashion
+              </h6>
             </div>
-            <img
-              src="/assets/women-hero.png"
-              alt="male model"
-              width={300}
-              className="mt-auto"
-            />
+            <Button variant="secondary" size="lg" className="py-3 mt-14">
+              SHOP NOW
+            </Button>
+          </div>
+        </CarouselItem>
+        <CarouselItem className="bg-[url('/assets/male-model.png')] bg-cover bg-center h-[70vh]">
+          <div className="z-10 text-white flex flex-col items-center justify-center bg-black bg-opacity-50 pb-10 h-full w-full">
+            <div className="pt-10 space-y-2 text-center">
+              <h2 className="text-5xl">Men</h2>
+              <h6 className="text-5xl font-thin">Stay Cozy, Look Sharp</h6>
+            </div>
+            <Button variant="secondary" size="lg" className="py-3 mt-14">
+              SHOP NOW
+            </Button>
           </div>
         </CarouselItem>
       </CarouselContent>
