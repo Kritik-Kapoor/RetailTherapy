@@ -1,0 +1,24 @@
+{
+  "collections": [
+    {
+      "id": 1,
+      "title": "OVERSIZED TEES",
+      "img": "/assets/collections/oversized-tees.webp"
+    },
+    {
+      "id": 2,
+      "title": "CARGOS",
+      "img": "/assets/collections/cargos.webp"
+    },
+    {
+      "id": 3,
+      "title": "SHIRTS",
+      "img": "/assets/collections/shirts.webp"
+    },
+    {
+      "id": 4,
+      "title": "TROUSERS",
+      "img": "/assets/collections/trousers.webp"
+    }
+  ]
+}

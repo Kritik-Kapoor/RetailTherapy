@@ -12,30 +12,12 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
   const [imgSrc, setImgSrc] = useState(data.image);
-  const [hoverTimeout, setHoverTimeout] = useState<ReturnType<
-    typeof setTimeout
-  > | null>(null);
-
-  //Add timeout
-  const handleMouseEnter = () => {
-    if (hoverTimeout) clearTimeout(hoverTimeout);
-    const timeout = setTimeout(() => {
-      setImgSrc(data.hoverImage);
-    }, 1000);
-    setHoverTimeout(timeout);
-  };
-
-  //clear timeout
-  const handleMouseLeave = () => {
-    if (hoverTimeout) clearTimeout(hoverTimeout);
-    setImgSrc(data.image);
-  };
 
   return (
     <div
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      className="cursor-pointer"
+      onMouseEnter={() => setImgSrc(data.hoverImage)}
+      onMouseLeave={() => setImgSrc(data.image)}
+      className="cursor-pointer text-left"
     >
       <img src={imgSrc} alt={data.title} width={300} className="h-[395px]" />
       <div className="space-y-1 mt-2">

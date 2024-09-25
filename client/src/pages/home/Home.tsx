@@ -4,7 +4,9 @@ import CarouselComponent from "../../../components/ui/carousel/CarouselComponent
 import brandsData from "../../../json/TopBrands.json";
 import { Button } from "../../../components/ui/button";
 import ProductCard from "../../../components/ui/card/ProductCard";
+import CollectionCard from "../../../components/ui/card/CollectionCard";
 import ProductsList from "../../../json/ProductsData.json";
+import CollectionList from "../../../json/Collections.json";
 
 const Home: React.FC = () => {
   const [activeBtn, setActiveBtn] = useState("new");
@@ -27,7 +29,7 @@ const Home: React.FC = () => {
           ))}
         </div>
       </div>
-      <div className="py-20 px-0 container">
+      <div className="py-20 px-0 container text-center">
         <div className="text-center space-x-5">
           <Button
             variant={activeBtn === "new" ? "dark" : "outline"}
@@ -44,9 +46,22 @@ const Home: React.FC = () => {
             MOST TRENDING
           </Button>
         </div>
-        <div className="grid grid-cols-5 gap-x-5 px-0 py-20">
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-x-5 px-0 py-20">
           {ProductsList.products.map((product) => (
             <ProductCard key={product.id} data={product} />
+          ))}
+        </div>
+        <Button variant="outline" className="rounded-sm">
+          VIEW ALL
+        </Button>
+      </div>
+      <div className="pb-20 px-0 container text-center">
+        <h4 className="text-5xl font-semibold my-7 text-center">
+          SEASONAL FAVS
+        </h4>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-5 px-0 py-20">
+          {CollectionList.collections.map((collection) => (
+            <CollectionCard key={collection.id} data={collection} />
           ))}
         </div>
       </div>
