@@ -1,0 +1,44 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "image": "/assets/products/product-1.webp",
+      "hoverImage": "/assets/products/product-1.1.webp",
+      "title": "H&M",
+      "subtitle": "Cream Stripes Crochet Shirt",
+      "price": "999"
+    },
+    {
+      "id": 2,
+      "image": "/assets/products/product-2.webp",
+      "hoverImage": "/assets/products/product-2.1.webp",
+      "title": "M&S",
+      "subtitle": "White Cuban Abstract Shirt",
+      "price": "1200"
+    },
+    {
+      "id": 3,
+      "image": "/assets/products/product-3.jpg",
+      "hoverImage": "/assets/products/product-3.1.jpg",
+      "title": "Levi's",
+      "subtitle": "Men's 511 Mid Indigo Slim Fit Jeans",
+      "price": "3000"
+    },
+    {
+      "id": 4,
+      "image": "/assets/products/product-4.jfif",
+      "hoverImage": "/assets/products/product-4.1.webp",
+      "title": "H&M",
+      "subtitle": "Oversized Fit T-shirt",
+      "price": "800"
+    },
+    {
+      "id": 5,
+      "image": "/assets/products/product-5.png",
+      "hoverImage": "/assets/products/product-5.2.png",
+      "title": "NIKE",
+      "subtitle": "Oversized Fit T-shirt",
+      "price": "800"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "slides": [
+    {
+      "heading": "New Arrivals",
+      "subHeading": "Winter Wear",
+      "img": "/assets/new-arrivals.png",
+      "url": "/new-arrivals"
+    },
+    {
+      "heading": "Women",
+      "subHeading": "Explore Your True Creative Fashion",
+      "img": "/assets/women-hero.jpg",
+      "url": "/women"
+    },
+    {
+      "heading": "Men",
+      "subHeading": "Stay Cozy, Look Sharp",
+      "img": "/assets/male-model.png",
+      "url": "/men"
+    }
+  ]
+}

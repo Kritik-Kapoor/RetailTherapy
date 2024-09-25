@@ -1,0 +1,32 @@
+{
+  "brands": [
+    {
+      "name": "Nike",
+      "img": "/assets/nike.png"
+    },
+    {
+      "name": "Jack & Jones",
+      "img": "/assets/jackandjones.png"
+    },
+    {
+      "name": "H&M",
+      "img": "/assets/h&m.svg"
+    },
+    {
+      "name": "Rare Rabbit",
+      "img": "/assets/rare-rabbit.png"
+    },
+    {
+      "name": "Levi's",
+      "img": "/assets/levi.png"
+    },
+    {
+      "name": "Zara",
+      "img": "/assets/zara.png"
+    },
+    {
+      "name": "Peter England",
+      "img": "/assets/peter-england.png"
+    }
+  ]
+}
