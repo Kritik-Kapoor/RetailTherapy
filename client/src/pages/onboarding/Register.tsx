@@ -110,7 +110,7 @@ const Register = () => {
                 </p>
               )}
             </div>
-            <Button variant="orange" className="rounded-full">
+            <Button className="rounded-full">
               SIGN UP <IconArrowNarrowRight stroke={1.25} className="ml-2" />
             </Button>
             <p className="text-slate-400 text-sm">

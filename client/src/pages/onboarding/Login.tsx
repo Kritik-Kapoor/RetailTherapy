@@ -29,7 +29,6 @@ const Login = () => {
       .post(`${import.meta.env.VITE_APP_BASE_URL}/user/login`, data)
       .then((response) => {
         setLoginError("");
-        console.log(response);
         const res = response.data.data;
         dispatch(
           setUser({
@@ -39,7 +38,6 @@ const Login = () => {
         );
       })
       .catch((err) => {
-        console.log(err);
         if (err.status === 401 || err.status === 404) {
           setLoginError("Invalid credentials");
         } else setLoginError("Sorry, something went wrong");
@@ -106,7 +104,7 @@ const Login = () => {
                 Forgot Password ?
               </p>
             </div>
-            <Button variant="orange" className="rounded-full font-semibold">
+            <Button className="rounded-full font-semibold">
               SIGN IN <IconArrowNarrowRight stroke={1.25} className="ml-2" />
             </Button>
             <p className="text-slate-400 text-sm">

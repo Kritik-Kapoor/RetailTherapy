@@ -7,6 +7,7 @@ import ProductCard from "../../../components/ui/card/ProductCard";
 import CollectionCard from "../../../components/ui/card/CollectionCard";
 import ProductsList from "../../../json/ProductsData.json";
 import CollectionList from "../../../json/Collections.json";
+import { Link } from "react-router-dom";
 
 const Home: React.FC = () => {
   const [activeBtn, setActiveBtn] = useState("new");
@@ -15,7 +16,7 @@ const Home: React.FC = () => {
     <section>
       <Navbar />
       <CarouselComponent />
-      <div className="py-20">
+      <div className="my-20">
         <h4 className="text-5xl font-semibold my-7 text-center">Top Brands</h4>
         <div className="flex items-center justify-around">
           {brandsData.brands.map((brand) => (
@@ -29,7 +30,7 @@ const Home: React.FC = () => {
           ))}
         </div>
       </div>
-      <div className="py-20 px-0 container text-center">
+      <div className="my-20 px-0 container text-center">
         <div className="text-center space-x-5">
           <Button
             variant={activeBtn === "new" ? "dark" : "outline"}
@@ -55,7 +56,7 @@ const Home: React.FC = () => {
           VIEW ALL
         </Button>
       </div>
-      <div className="pb-20 px-0 container text-center">
+      <div className="mb-20 px-0 container text-center">
         <h4 className="text-5xl font-semibold my-7 text-center">
           SEASONAL FAVS
         </h4>
@@ -64,6 +65,36 @@ const Home: React.FC = () => {
             <CollectionCard key={collection.id} data={collection} />
           ))}
         </div>
+      </div>
+      <div className="mb-20 grid grid-cols-2 bg-[#F4F1E7] h-full">
+        <div className="col-span-2 lg:col-span-1 m-auto space-y-7 py-8 px-14 w-full text-center lg:text-left lg:w-auto">
+          <p className="font-semibold text-[#FD8401] text-3xl">
+            STAY TUNED TO TRENDS
+          </p>
+          <h3 className="font-bold text-5xl">
+            SIGN UP NOW FOR{" "}
+            <span className="hidden lg:inline">
+              <br />
+            </span>
+            EXCLUSIVE FLAT
+            <span className="hidden lg:inline">
+              <br />
+            </span>{" "}
+            10% OFF*
+          </h3>
+          <p className="text-2xl font-medium">ON YOUR FIRST PURCHASE</p>
+          <Link
+            to="/register"
+            className="bg-[#F47458] text-white hover:bg-[#d63c1a] dark:hover:bg-[#d63c1a] font-bold text-xl h-11 rounded-lg px-8 inline-flex items-center justify-center whitespace-nowrap ring-offset-white transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50"
+          >
+            SIGN UP
+          </Link>
+        </div>
+        <img
+          src="/assets/free-delivery.png"
+          alt="Free Delivery"
+          className="hidden lg:block w-3/4"
+        />
       </div>
     </section>
   );
