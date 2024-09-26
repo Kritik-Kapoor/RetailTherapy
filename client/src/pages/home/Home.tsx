@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Navbar from "../../../components/navbar/Navbar";
+import Footer from "../../../components/footer/Footer";
 import CarouselComponent from "../../../components/ui/carousel/CarouselComponent";
 import brandsData from "../../../json/TopBrands.json";
 import { Button } from "../../../components/ui/button";
@@ -7,7 +9,6 @@ import ProductCard from "../../../components/ui/card/ProductCard";
 import CollectionCard from "../../../components/ui/card/CollectionCard";
 import ProductsList from "../../../json/ProductsData.json";
 import CollectionList from "../../../json/Collections.json";
-import { Link } from "react-router-dom";
 
 const Home: React.FC = () => {
   const [activeBtn, setActiveBtn] = useState("new");
@@ -17,7 +18,7 @@ const Home: React.FC = () => {
       <Navbar />
       <CarouselComponent />
       <div className="my-20">
-        <h4 className="text-5xl font-semibold my-7 text-center">Top Brands</h4>
+        <h4 className="text-3xl mt-7 mb-16 text-center">TOP BRANDS</h4>
         <div className="flex items-center justify-around">
           {brandsData.brands.map((brand) => (
             <img
@@ -57,16 +58,14 @@ const Home: React.FC = () => {
         </Button>
       </div>
       <div className="mb-20 px-0 container text-center">
-        <h4 className="text-5xl font-semibold my-7 text-center">
-          SEASONAL FAVS
-        </h4>
+        <h4 className="text-3xl my-7 text-center">SEASONAL FAVS</h4>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-5 px-0 py-20">
           {CollectionList.collections.map((collection) => (
             <CollectionCard key={collection.id} data={collection} />
           ))}
         </div>
       </div>
-      <div className="mb-20 grid grid-cols-2 bg-[#F4F1E7] h-full">
+      <div className="mb-28 grid grid-cols-2 bg-[#F4F1E7] h-full">
         <div className="col-span-2 lg:col-span-1 m-auto space-y-7 py-8 px-14 w-full text-center lg:text-left lg:w-auto">
           <p className="font-semibold text-[#FD8401] text-3xl">
             STAY TUNED TO TRENDS
@@ -96,6 +95,15 @@ const Home: React.FC = () => {
           className="hidden lg:block w-3/4"
         />
       </div>
+      <div className="mb-28 px-0 container text-center">
+        <h4 className="text-3xl my-7 text-center">HOT THIS WEEK</h4>
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-x-5 px-0 py-20">
+          {ProductsList.products.map((product) => (
+            <ProductCard key={product.id} data={product} />
+          ))}
+        </div>
+      </div>
+      <Footer />
     </section>
   );
 };

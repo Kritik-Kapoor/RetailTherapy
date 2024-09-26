@@ -1,0 +1,27 @@
+.footer-list > *:not(:last-child) {
+  margin-bottom: 8px;
+}
+.footer-list-items {
+  font-weight: 300;
+}
+.footer-list-items:hover {
+  cursor: pointer;
+  color: #f47458;
+}
+.footer-list-header {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  .footer-list {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .footer-list > *:not(:last-child) {
+    margin-bottom: 12px;
+  }
+  .footer-list-header {
+    margin-bottom: 1.5rem !important;
+  }
+}
