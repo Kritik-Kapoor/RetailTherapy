@@ -3,14 +3,24 @@
 }
 .footer-list-items {
   font-weight: 300;
+  font-size: 13px;
 }
 .footer-list-items:hover {
   cursor: pointer;
   color: #f47458;
 }
 .footer-list-header {
-  font-size: 1.25rem;
+  font-size: 1rem;
   line-height: 1.75rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-list-header {
+    font-size: 1.1rem;
+  }
+  .footer-list-items {
+    font-size: 14px;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
@@ -22,6 +32,10 @@
     margin-bottom: 12px;
   }
   .footer-list-header {
+    font-size: 1.2rem;
     margin-bottom: 1.5rem !important;
+  }
+  .footer-list-items {
+    font-size: 16px;
   }
 }

@@ -19,7 +19,7 @@ const Home: React.FC = () => {
       <CarouselComponent />
       <div className="my-20">
         <h4 className="text-3xl mt-7 mb-16 text-center">TOP BRANDS</h4>
-        <div className="flex items-center justify-around">
+        <div className="flex items-center justify-around flex-wrap gap-2">
           {brandsData.brands.map((brand) => (
             <img
               key={brand.name}
@@ -31,7 +31,7 @@ const Home: React.FC = () => {
           ))}
         </div>
       </div>
-      <div className="my-20 px-0 container text-center">
+      <div className="my-20 md:container text-center md:px-0">
         <div className="text-center space-x-5">
           <Button
             variant={activeBtn === "new" ? "dark" : "outline"}
@@ -48,7 +48,7 @@ const Home: React.FC = () => {
             MOST TRENDING
           </Button>
         </div>
-        <div className="grid grid-cols-2 lg:grid-cols-5 gap-x-5 px-0 py-20">
+        <div className="flex items-start mt-10 mb-5 gap-3 p-5 md:px-10 xl:px-0 overflow-x-auto whitespace-nowrap scrollbar-hide">
           {ProductsList.products.map((product) => (
             <ProductCard key={product.id} data={product} />
           ))}
@@ -59,18 +59,18 @@ const Home: React.FC = () => {
       </div>
       <div className="mb-20 px-0 container text-center">
         <h4 className="text-3xl my-7 text-center">SEASONAL FAVS</h4>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-5 px-0 py-20">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 p-5 py-10 lg:py-20">
           {CollectionList.collections.map((collection) => (
             <CollectionCard key={collection.id} data={collection} />
           ))}
         </div>
       </div>
       <div className="mb-28 grid grid-cols-2 bg-[#F4F1E7] h-full">
-        <div className="col-span-2 lg:col-span-1 m-auto space-y-7 py-8 px-14 w-full text-center lg:text-left lg:w-auto">
-          <p className="font-semibold text-[#FD8401] text-3xl">
+        <div className="col-span-2 lg:col-span-1 m-auto space-y-7 py-8 px-4 md:px-14 w-full text-center lg:text-left lg:w-auto">
+          <p className="font-semibold text-[#FD8401] text-2xl">
             STAY TUNED TO TRENDS
           </p>
-          <h3 className="font-bold text-5xl">
+          <h3 className="font-bold text-3xl md:text-5xl">
             SIGN UP NOW FOR{" "}
             <span className="hidden lg:inline">
               <br />
@@ -81,10 +81,10 @@ const Home: React.FC = () => {
             </span>{" "}
             10% OFF*
           </h3>
-          <p className="text-2xl font-medium">ON YOUR FIRST PURCHASE</p>
+          <p className="text-xl font-medium">ON YOUR FIRST PURCHASE</p>
           <Link
             to="/register"
-            className="bg-[#F47458] text-white hover:bg-[#d63c1a] dark:hover:bg-[#d63c1a] font-bold text-xl h-11 rounded-lg px-8 inline-flex items-center justify-center whitespace-nowrap ring-offset-white transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50"
+            className="bg-[#F47458] text-white hover:bg-[#d63c1a] dark:hover:bg-[#d63c1a] font-bold text-base lg:text-xl h-11 rounded-lg px-8 inline-flex items-center justify-center whitespace-nowrap ring-offset-white transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50"
           >
             SIGN UP
           </Link>
@@ -95,9 +95,9 @@ const Home: React.FC = () => {
           className="hidden lg:block w-3/4"
         />
       </div>
-      <div className="mb-28 px-0 container text-center">
+      <div className="mb-28 md:container text-center md:px-0">
         <h4 className="text-3xl my-7 text-center">HOT THIS WEEK</h4>
-        <div className="grid grid-cols-2 lg:grid-cols-5 gap-x-5 px-0 py-20">
+        <div className="flex items-start mt-10 mb-5 gap-3 p-5 md:px-10 xl:px-0 overflow-x-auto whitespace-nowrap scrollbar-hide">
           {ProductsList.products.map((product) => (
             <ProductCard key={product.id} data={product} />
           ))}
