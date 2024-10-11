@@ -4,41 +4,117 @@
       "id": 1,
       "image": "/assets/products/product-1.webp",
       "hoverImage": "/assets/products/product-1.1.webp",
-      "title": "H&M",
-      "subtitle": "Cream Stripes Crochet Shirt",
-      "price": "999"
+      "allImages": [
+        "/assets/products/product-1.webp",
+        "/assets/products/product-1.1.webp",
+        "/assets/products/product-1.2.webp",
+        "/assets/products/product-1.3.webp"
+      ],
+      "company": "H&M",
+      "title": "Cream Stripes Crochet Shirt",
+      "price": "999",
+      "size": [
+        { "size": "xs", "qty": 3 },
+        { "size": "s", "qty": 1 },
+        { "size": "m", "qty": 5 },
+        { "size": "l", "qty": 0 },
+        { "size": "xl", "qty": 2 },
+        { "size": "xxl", "qty": 0 }
+      ],
+      "info": {
+        "description": "Give a majestic lift to your look with this blue checks pattern shirt. The shirt is crafted from fine 82.5% lyocell, 15.2% linen, 2.3% cotton. It is a versatile staple and great for teaming with jeans for a more casual look or smartening up with a classic pair of chinos",
+        "fit": "slim fit",
+        "model": "Model is 6'1 wearing M size",
+        "country": "India"
+      }
     },
     {
       "id": 2,
       "image": "/assets/products/product-2.webp",
       "hoverImage": "/assets/products/product-2.1.webp",
-      "title": "M&S",
-      "subtitle": "White Cuban Abstract Shirt",
-      "price": "1200"
+      "allImages": [
+        "/assets/products/product-2.webp",
+        "/assets/products/product-2.1.webp",
+        "/assets/products/product-2.2.webp",
+        "/assets/products/product-2.3.webp"
+      ],
+      "company": "M&S",
+      "title": "White Cuban Abstract Shirt",
+      "price": "1200",
+      "size": [
+        { "size": "xs", "qty": 2 },
+        { "size": "s", "qty": 5 },
+        { "size": "m", "qty": 3 },
+        { "size": "l", "qty": 2 },
+        { "size": "xl", "qty": 0 },
+        { "size": "xxl", "qty": 1 }
+      ]
     },
     {
       "id": 3,
       "image": "/assets/products/product-3.jpg",
       "hoverImage": "/assets/products/product-3.1.jpg",
-      "title": "Levi's",
-      "subtitle": "Men's 511 Mid Indigo Slim Fit Jeans",
-      "price": "3000"
+      "allImages": [
+        "/assets/products/product-3.jpg",
+        "/assets/products/product-3.1.jpg",
+        "/assets/products/product-3.2.jpg",
+        "/assets/products/product-3.3.jpg"
+      ],
+      "company": "Levi's",
+      "title": "Men's 511 Mid Indigo Slim Fit Jeans",
+      "price": "3000",
+      "size": [
+        { "size": "xs", "qty": 0 },
+        { "size": "s", "qty": 0 },
+        { "size": "m", "qty": 5 },
+        { "size": "l", "qty": 2 },
+        { "size": "xl", "qty": 2 },
+        { "size": "xxl", "qty": 0 }
+      ]
     },
     {
       "id": 4,
       "image": "/assets/products/product-4.jfif",
       "hoverImage": "/assets/products/product-4.1.webp",
-      "title": "H&M",
-      "subtitle": "Oversized Fit T-shirt",
-      "price": "800"
+      "allImages": [
+        "/assets/products/product-4.jfif",
+        "/assets/products/product-4.1.webp",
+        "/assets/products/product-4.2.webp",
+        "/assets/products/product-4.3.webp"
+      ],
+      "company": "H&M",
+      "title": "Oversized Fit T-shirt",
+      "price": "800",
+      "size": [
+        { "size": "xs", "qty": 3 },
+        { "size": "s", "qty": 1 },
+        { "size": "m", "qty": 5 },
+        { "size": "l", "qty": 3 },
+        { "size": "xl", "qty": 2 },
+        { "size": "xxl", "qty": 4 }
+      ]
     },
     {
       "id": 5,
       "image": "/assets/products/product-5.png",
       "hoverImage": "/assets/products/product-5.2.png",
-      "title": "NIKE",
-      "subtitle": "Oversized Fit T-shirt",
-      "price": "800"
+      "allImages": [
+        "/assets/products/product-5.png",
+        "/assets/products/product-5.1.png",
+        "/assets/products/product-5.2.jfif",
+        "/assets/products/product-5.3.webp"
+      ],
+      "company": "NIKE",
+      "title": "Oversized Fit T-shirt",
+      "price": "800",
+      "size": [
+        { "size": "xs", "qty": 3 },
+        { "size": "s", "qty": 1 },
+        { "size": "m", "qty": 5 },
+        { "size": "l", "qty": 0 },
+        { "size": "xl", "qty": 2 },
+        { "size": "xxl", "qty": 0 }
+      ]
     }
   ]
 }
