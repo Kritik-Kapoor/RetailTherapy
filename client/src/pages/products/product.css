@@ -14,3 +14,20 @@
   background-color: #000;
   color: #fff;
 }
+.dot {
+  background-color: currentColor;
+  border-radius: 100%;
+  cursor: pointer;
+  display: inline-block;
+  height: 6px;
+  margin: 0 5px;
+  opacity: 0.4;
+  vertical-align: middle;
+  width: 6px;
+}
+.dot.is-selected {
+  background-color: #000;
+  height: 9px;
+  opacity: 1;
+  width: 9px;
+}

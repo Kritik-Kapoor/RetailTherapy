@@ -48,7 +48,13 @@
         { "size": "l", "qty": 2 },
         { "size": "xl", "qty": 0 },
         { "size": "xxl", "qty": 1 }
-      ]
+      ],
+      "info": {
+        "description": "Give a majestic lift to your look with this blue checks pattern shirt. The shirt is crafted from fine 82.5% lyocell, 15.2% linen, 2.3% cotton. It is a versatile staple and great for teaming with jeans for a more casual look or smartening up with a classic pair of chinos",
+        "fit": "slim fit",
+        "model": "Model is 6'1 wearing M size",
+        "country": "India"
+      }
     },
     {
       "id": 3,
@@ -70,7 +76,13 @@
         { "size": "l", "qty": 2 },
         { "size": "xl", "qty": 2 },
         { "size": "xxl", "qty": 0 }
-      ]
+      ],
+      "info": {
+        "description": "Give a majestic lift to your look with this blue checks pattern shirt. The shirt is crafted from fine 82.5% lyocell, 15.2% linen, 2.3% cotton. It is a versatile staple and great for teaming with jeans for a more casual look or smartening up with a classic pair of chinos",
+        "fit": "slim fit",
+        "model": "Model is 6'1 wearing M size",
+        "country": "India"
+      }
     },
     {
       "id": 4,
@@ -92,7 +104,13 @@
         { "size": "l", "qty": 3 },
         { "size": "xl", "qty": 2 },
         { "size": "xxl", "qty": 4 }
-      ]
+      ],
+      "info": {
+        "description": "Give a majestic lift to your look with this blue checks pattern shirt. The shirt is crafted from fine 82.5% lyocell, 15.2% linen, 2.3% cotton. It is a versatile staple and great for teaming with jeans for a more casual look or smartening up with a classic pair of chinos",
+        "fit": "slim fit",
+        "model": "Model is 6'1 wearing M size",
+        "country": "India"
+      }
     },
     {
       "id": 5,
@@ -114,7 +132,13 @@
         { "size": "l", "qty": 0 },
         { "size": "xl", "qty": 2 },
         { "size": "xxl", "qty": 0 }
-      ]
+      ],
+      "info": {
+        "description": "Give a majestic lift to your look with this blue checks pattern shirt. The shirt is crafted from fine 82.5% lyocell, 15.2% linen, 2.3% cotton. It is a versatile staple and great for teaming with jeans for a more casual look or smartening up with a classic pair of chinos",
+        "fit": "slim fit",
+        "model": "Model is 6'1 wearing M size",
+        "country": "India"
+      }
     }
   ]
 }
