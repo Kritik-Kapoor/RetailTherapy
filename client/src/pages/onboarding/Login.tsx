@@ -5,8 +5,6 @@ import axios from "axios";
 import { Input } from "../../../components/ui/input";
 import { Button } from "../../../components/ui/button";
 import { IconArrowNarrowRight } from "@tabler/icons-react";
-import { useAppDispatch } from "../../redux/hooks";
-import { setUser } from "../../redux/slices/userSlice";
 
 type Inputs = {
   email: string;
@@ -14,8 +12,6 @@ type Inputs = {
 };
 
 const Login = () => {
-  const dispatch = useAppDispatch();
-
   const [loginError, setLoginError] = useState("");
 
   const {
@@ -30,12 +26,6 @@ const Login = () => {
       .then((response) => {
         setLoginError("");
         const res = response.data.data;
-        dispatch(
-          setUser({
-            token: res.accessToken,
-            name: res.userData.username,
-          })
-        );
       })
       .catch((err) => {
         if (err.status === 401 || err.status === 404) {

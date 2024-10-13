@@ -2,6 +2,7 @@ import { ApiError } from "../../utils/ApiError.js";
 import { ApiResponse } from "../../utils/ApiResponse.js";
 import { asyncHandler } from "../../utils/asyncHandler.js";
 import { User } from "../../models/user/user.model.js";
+import { cookieOptions } from "../../constants.js";
 
 const registerUser = asyncHandler(async (req, res) => {
   const { username, email, password } = req.body;
@@ -29,13 +30,8 @@ const registerUser = asyncHandler(async (req, res) => {
   if (createdUser) {
     return res
       .status(201)
-      .json(
-        new ApiResponse(
-          200,
-          { createdUser, accessToken },
-          "User registered successfully"
-        )
-      );
+      .cookie("accessToken", accessToken, cookieOptions)
+      .json(new ApiResponse(200, createdUser, "User registered successfully"));
   }
 });
 

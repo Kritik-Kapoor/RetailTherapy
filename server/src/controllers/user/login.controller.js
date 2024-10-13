@@ -2,6 +2,7 @@ import { User } from "../../models/user/user.model.js";
 import { ApiError } from "../../utils/ApiError.js";
 import { ApiResponse } from "../../utils/ApiResponse.js";
 import { asyncHandler } from "../../utils/asyncHandler.js";
+import { cookieOptions } from "../../constants.js";
 
 const userLogin = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
@@ -20,9 +21,8 @@ const userLogin = asyncHandler(async (req, res) => {
     const userData = await User.findOne({ email: email }).select("-password");
     return res
       .status(200)
-      .json(
-        new ApiResponse(200, { userData, accessToken }, "Login Successfull")
-      );
+      .cookie("accessToken", accessToken, cookieOptions)
+      .json(new ApiResponse(200, userData, "Login Successfull"));
   } else {
     throw new ApiError(401, "Incorrect credentials");
   }
