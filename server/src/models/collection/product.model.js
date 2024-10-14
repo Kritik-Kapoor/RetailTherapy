@@ -7,6 +7,7 @@ const productSchema = new Schema({
     trim: true,
     lowercase: true,
     minLength: 2,
+    index: true,
   },
   collection: {
     type: Schema.Types.ObjectId,
@@ -37,6 +38,7 @@ const productSchema = new Schema({
     type: String,
     required: [true, "Brand is required"],
     trim: true,
+    index: true,
   },
   title: {
     type: String,
@@ -65,7 +67,17 @@ const productSchema = new Schema({
     type: String,
     required: true,
     trim: true,
+    lowercase: true,
   },
+  tags: [
+    {
+      type: String,
+      required: true,
+      trim: true,
+      lowercase: true,
+      index: true,
+    },
+  ],
 });
 
 export const Product = mongoose.model("Product", productSchema);
